@@ -9,7 +9,11 @@ I use [Input fonts](https://input.djr.com/preview/?size=14&language=javascript&t
 
 I patch it as a ["Nerd font"](https://gist.github.com/ismailshak/72da606d43ac57a19bc6d98285e56f3b) for ["Oh My Posh"](https://ohmyposh.dev/) terminal compatibility:
 ```sh
-podman run -v ~/tmp/input-mono:/in:ro,z -v ~/tmp/patched-fonts:/out:z nerdfonts/patcher --careful --complete --adjust-line-height
+podman run -v ~/fun/my-input-nerd-font/fonts-unpatched:/in:ro,z -v ~/fun/my-input-nerd-font/fonts:/out:z nerdfonts/patcher --careful --complete --adjust-line-height
+```
+or
+```
+docker run -v /fun/my-input-nerd-font/fonts-unpatched:/in -v ~/fun/my-input-nerd-font/fonts:/out nerdfonts/patcher --careful --complete --adjust-line-height
 ```
 
 You can download the patched fonts in the [fonts](./fonts/) folder
